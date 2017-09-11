@@ -46,7 +46,9 @@ sleep(2)
 
 Pwr.ChangeDutyCycle(25)
 
+sleep(2)
 
+Pwr.stop()
 GPIO.output(MotorPwr,GPIO.LOW)
 
 sleep(2)
@@ -85,6 +87,9 @@ sleep(2)
 
 Pwr.ChangeDutyCycle(25)
 
+sleep(2)
+
+Pwr.stop()
 
 GPIO.output(MotorPwr,GPIO.LOW)
 
