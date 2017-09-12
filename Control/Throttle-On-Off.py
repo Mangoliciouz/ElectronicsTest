@@ -30,7 +30,7 @@ print "Turning Motor on backwards for 5 Seconds."
 sleep(2)
 
 GPIO.output(MotorDir,GPIO.HIGH)
-GPIO.output(MotorPwr,GPIO.LOW)
+GPIO.output(MotorPwr,GPIO.HIGH)
 
 sleep(5)
 
