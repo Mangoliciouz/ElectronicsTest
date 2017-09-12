@@ -6,8 +6,8 @@ from time import sleep
 GPIO.setmode(GPIO.BOARD)
 GPIO.setwarnings(False)
 
-MotorDir = 7
-MotorPwr = 8
+MotorDir = 10
+MotorPwr = 7
 
 GPIO.setup(MotorDir,GPIO.OUT)
 GPIO.setup(MotorPwr,GPIO.OUT)
