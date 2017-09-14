@@ -15,6 +15,9 @@ def communicate(data):
     return
 
 
+communicate('Hello Server')
+
 communicate('Disconnect')
+
 
 exit()
