@@ -19,7 +19,7 @@ while true:
     client.Send("Goodbye")
     client.close()
     break
-  else
+  else:
     client.send("Invalid data")
     print("    Processing done, Invalid Data \n[*] Reply Sent")
 
