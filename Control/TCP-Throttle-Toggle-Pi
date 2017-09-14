@@ -1,0 +1,50 @@
+import socket
+import RPi.GPIO as GPIO
+from time import sleep
+GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings(False)
+
+MotorDir = 10
+LMotorPwr = 7
+RMotorPwr = 8
+
+GPIO.setup(MotorDir,GPIO.OUT)
+GPIO.setup(LMotorPwr,GPIO.OUT)
+GPIO.setup(RMotorPwr,GPIO.OUT)
+
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+ip = ip = socket.gethostbyname(socket.gethostname())
+port = 10013
+address = (ip, port)
+server.bind(address)
+server.listen(1)
+print '[*] Started listening ', ip,':',port
+(client, addr) = server.accept()
+print '[*] Got a connection from ', addr[0],':',addr[1]
+while True:
+    data = client.recv(1024)
+    print '[*] Recieved ',data,' From the client'
+    print '    Proccessing data'
+    if data == 'On':
+        client.send('Turning Engines On')
+        GPIO.output(LMotorPwr,GPIO.HIGH)
+        GPIO.output(RMotorPwr,GPIO.HIGH)
+        print '    Processing done \n [*] Reply sent'
+    elif data == 'Off':
+    print '[*] Recieved ',data,' From the client'
+    print '    Proccessing data'
+    if data == 'On':
+        client.send('Turning Engines On')
+        GPIO.output(LMotorPwr,GPIO.LOW)
+        GPIO.output(RMotorPwr,GPIO.LOW)
+        print '    Processing done \n [*] Reply sent'
+    elif data == 'Disconnect':
+        client.Send('Goodbye')
+        client.close()
+        break
+    else:
+        client.send('Invalid data')
+        print '    Processing done, Invalid Data \n[*] Reply Sent'
+
+exit()
