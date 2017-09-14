@@ -7,7 +7,7 @@ server.bind(address)
 server.listen(1)
 print("[*] Started listening ",ip,":",port)
 client.addr = server.accept()
-print "[*] Got a connection from ".addr[0].":".add[1]
+print "[*] Got a connection from ",addr[0],":",add[1]
 while true:
   data = client.recv(1024)
   print("[*] Recieved ",data," From the client")
