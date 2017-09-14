@@ -13,6 +13,6 @@ def communicate(data):
   print(client.recv(1024))
   return
 
-def communicate("Disconnect")
+communicate("Disconnect")
 
 exit()
