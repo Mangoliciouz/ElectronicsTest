@@ -11,7 +11,7 @@ client.connect(address)
 
 def communicate(data):
     client.send(data.encode())
-    print(client.recv(1024))
+    print(decode(client.recv(1024)))
     return
 
 
