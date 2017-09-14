@@ -14,7 +14,7 @@ while True:
     print('    Proccessing data')
     if data == 'Hello Server':
         client.send('Hello Client')
-        print '    Processing done \n [*] Reply sent'
+        print('    Processing done \n [*] Reply sent')
     elif data == 'Disconnect':
         client.Send('Goodbye')
         client.close()
