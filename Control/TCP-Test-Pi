@@ -5,12 +5,12 @@ port = 10013
 address = (ip,port)
 server.bind(address)
 server.listen(1)
-print("[*] Started listening ".ip.":".port)
+print("[*] Started listening ",ip,":",port)
 client.addr = server.accept()
 print "[*] Got a connection from ".addr[0].":".add[1]
 while true:
   data = client.recv(1024)
-  print("[*] Recieved ".data." From the client")
+  print("[*] Recieved ",data," From the client")
   print("    Proccessing data")
   if(data == "Hello Server"):
     client.send("Hello Client")
