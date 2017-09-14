@@ -10,7 +10,7 @@ client.connect(address)
 # client.recv(1024)
 
 def communicate(data):
-    client.send(message.encode(data))
+    client.send(data.encode())
     print(client.recv(1024))
     return
 
