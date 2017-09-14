@@ -14,7 +14,7 @@ GPIO.setup(MotorDir,GPIO.OUT)
 GPIO.setup(LMotorPwr,GPIO.OUT)
 GPIO.setup(RMotorPwr,GPIO.OUT)
 
-print "Turning Both Motors on Forwards for 5 Seconds."
+print("Turning Both Motors on Forwards for 5 Seconds.")
 
 sleep(2)
 
@@ -29,7 +29,7 @@ GPIO.output(RMotorPwr,GPIO.LOW)
 
 sleep(2)
 
-print "Turning Motor on backwards for 5 Seconds."
+print("Turning Motor on backwards for 5 Seconds.")
 
 sleep(2)
 
@@ -46,7 +46,7 @@ sleep(2)
 
 GPIO.output(MotorDir,GPIO.LOW)
 
-print "Test Complete."
+print("Test Complete.")
 
 GPIO.cleanup()
 

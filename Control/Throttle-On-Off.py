@@ -12,7 +12,7 @@ MotorPwr = 7
 GPIO.setup(MotorDir,GPIO.OUT)
 GPIO.setup(MotorPwr,GPIO.OUT)
 
-print "Turning Motor on Forwards for 5 Seconds."
+print("Turning Motor on Forwards for 5 Seconds.")
 
 sleep(2)
 
@@ -25,7 +25,7 @@ GPIO.output(MotorPwr,GPIO.LOW)
 
 sleep(2)
 
-print "Turning Motor on backwards for 5 Seconds."
+print("Turning Motor on backwards for 5 Seconds.")
 
 sleep(2)
 
@@ -40,7 +40,7 @@ sleep(2)
 
 GPIO.output(MotorDir,GPIO.LOW)
 
-print "Test Complete."
+print("Test Complete.")
 
 GPIO.cleanup()
 
