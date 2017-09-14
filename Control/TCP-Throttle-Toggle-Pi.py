@@ -14,7 +14,8 @@ GPIO.setup(RMotorPwr,GPIO.OUT)
 
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-ip = ip = socket.gethostbyname(socket.gethostname())
+ip = socket.gethostbyname(socket.gethostname())
+ip = '192.168.1.151'
 port = 10013
 address = (ip, port)
 server.bind(address)
