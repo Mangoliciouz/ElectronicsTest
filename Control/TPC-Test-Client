@@ -1,0 +1,18 @@
+import socket
+client = socket.socket(socket.AF INET,socket.SOCK_STREAM)
+ip=socket.gethostbyname("raspberrypi")
+port=10013
+address=(ip,port)
+client.connect(address)
+
+#client.send("Hello Server")
+#client.recv(1024)
+
+def communicate(data):
+  client.send(data)
+  print client.recv(1024)
+  return
+
+def communicate("Disconnect")
+
+exit()
