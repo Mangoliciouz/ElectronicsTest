@@ -34,17 +34,18 @@ while True:
         client.send(rdata.encode())
         GPIO.output(LMotorPwr,GPIO.HIGH)
         GPIO.output(RMotorPwr,GPIO.HIGH)
-        print('    Processing done \n [*] Reply sent')
+        print('    Processing done \n[*] Reply sent')
     elif data == 'Engine-0':
         rdata = 'Turning Engine Off'
         client.send(rdata.encode())
         GPIO.output(LMotorPwr,GPIO.LOW)
         GPIO.output(RMotorPwr,GPIO.LOW)
-        print('    Processing done \n [*] Reply sent')
+        print('    Processing done \n[*] Reply sent')
     elif data == 'Disconnect':
         rdata = 'Goodbye'
         client.send(rdata.encode())
         client.close()
+        print('    Processing done \n[*] Reply sent\n[*] Connection Closed\n[*] Terminating Process')
         break
     else:
         rdata = 'Invalid data'
