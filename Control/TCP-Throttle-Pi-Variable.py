@@ -31,7 +31,7 @@ print('[*] Started listening ', ip,':',port)
 print('[*] Got a connection from ', addr[0],':',addr[1])
 while True:
     data = client.recv(64)
-        data = data.decode()
+    data = data.decode()
     if 'Engine-' in data:
         EPwrNo = data[7:]
         EPwrNo = EPwrNo.rstrip()
