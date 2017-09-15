@@ -37,8 +37,9 @@ while True:
         EPwrNo = filter(type(data).isdigit, data)
         #rdata = 'Turning Engine to ', filter(type(data).isdigit, data) ,'%'
         #client.send(rdata.encode())
-        LPwr.ChangeDutyCycle(EPwrNo)
-        RPwr.ChangeDutyCycle(EPwrNo)
+        EPwrNoF = float.valueOf(EPwrNo)
+        LPwr.ChangeDutyCycle(EPwrNoF)
+        RPwr.ChangeDutyCycle(EPwrNoF)
         print('    Turning Engine to ', EPwrNo ,'%')
     elif data == 'Disconnect':
         rdata = 'Goodbye'
