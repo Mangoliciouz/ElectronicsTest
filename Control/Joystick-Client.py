@@ -10,7 +10,7 @@ client.connect(address)
 def communicate(data):
     Edata = 'Engine-' + data
     client.send(Edata.encode())
-    reply = client.recv(1024)
+    #reply = client.recv(1024)
     #print(reply.decode())
     return
 
