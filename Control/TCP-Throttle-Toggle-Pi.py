@@ -43,7 +43,7 @@ while True:
         print('    Processing done \n [*] Reply sent')
     elif data == 'Disconnect':
         rdata = 'Goodbye'
-        client.Send(rdata.encode())
+        client.send(rdata.encode())
         client.close()
         break
     else:
