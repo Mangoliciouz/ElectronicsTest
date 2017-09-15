@@ -16,6 +16,8 @@ GPIO.setup(RMotorPwr,GPIO.OUT)
 LPwr = GPIO.PWM(LMotorPwr,100)
 RPwr = GPIO.PWM(RMotorPwr,100)
 
+LPwr.start(0)
+RPwr.start(0)
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ip = socket.gethostbyname(socket.gethostname())
