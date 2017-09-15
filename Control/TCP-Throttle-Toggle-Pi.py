@@ -35,7 +35,7 @@ while True:
         GPIO.output(LMotorPwr,GPIO.HIGH)
         GPIO.output(RMotorPwr,GPIO.HIGH)
         print('    Processing done \n [*] Reply sent')
-    if data == 'Engine-0':
+    elif data == 'Engine-0':
         rdata = 'Turning Engine Off'
         client.send(rdata.encode())
         GPIO.output(LMotorPwr,GPIO.LOW)
