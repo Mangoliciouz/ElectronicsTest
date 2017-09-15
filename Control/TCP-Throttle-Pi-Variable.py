@@ -35,6 +35,7 @@ while True:
     if 'Engine-' in data:
         EPwrNo = data[7:]
         EPwrNo = EPwrNo.rstrip()
+        EPwrNo = EPwrNo.lstrip()
         #rdata = 'Turning Engine to ', filter(type(data).isdigit, data) ,'%'
         #client.send(rdata.encode())
         EPwrNoF = float(EPwrNo)

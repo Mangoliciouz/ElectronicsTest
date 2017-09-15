@@ -93,7 +93,7 @@ while done==False:
 
     # For each joystick:
     for i in range(joystick_count):
-        joystick = pygame.joystick.Joystick(i)
+        joystick = pygame.joystick.Joystick(1)
         joystick.init()
 
         textPrint.print(screen, "Joystick {}".format(i) )
@@ -109,16 +109,16 @@ while done==False:
         textPrint.print(screen, "Number of axes: {}".format(axes) )
         textPrint.indent()
 
-        for i in range( axes ):
-            axis = joystick.get_axis( i )
-            textPrint.print(screen, "Axis {} value: {:>6.3f}".format(i, axis) )
-            value = (axis + 1) * 50
-            value = int(value)
-            value = (value * -1) + 100
-            value = str(value)
-            communicate(value)
-            textPrint.print(screen, value)
-        textPrint.unindent()
+        #for i in range( axes ):
+        axis = joystick.get_axis( 2 )
+        textPrint.print(screen, "Axis {} value: {:>6.3f}".format(i, axis) )
+        value = (axis + 1) * 50
+        value = int(value)
+        value = (value * -1) + 100
+        value = str(value)
+        communicate(value)
+        textPrint.print(screen, value)
+        #textPrint.unindent()
 
         buttons = joystick.get_numbuttons()
         textPrint.print(screen, "Number of buttons: {}".format(buttons) )
@@ -135,10 +135,7 @@ while done==False:
         textPrint.print(screen, "Number of hats: {}".format(hats) )
         textPrint.indent()
 
-        for i in range( hats ):
-            hat = joystick.get_hat( i )
-            textPrint.print(screen, "Hat {} value: {}".format(i, str(hat)) )
-        textPrint.unindent()
+
 
         textPrint.unindent()
 
@@ -150,7 +147,7 @@ while done==False:
     pygame.display.flip()
 
     # Limit to 20 frames per second
-    clock.tick(20)
+    clock.tick(1)
 
 # Close the window and quit.
 # If you forget this line, the program will 'hang'
