@@ -30,11 +30,11 @@ print('[*] Got a connection from ', addr[0],':',addr[1])
 while True:
     data = client.recv(64)
     print('[*] Recieved ',data,' From the client')
-    print('    Proccessing data')
 
     data = data.decode()
     if 'Engine-' in data:
         EPwrNo = data[7:]
+        EPwrNo = EPwrNo.rstrip()
         #rdata = 'Turning Engine to ', filter(type(data).isdigit, data) ,'%'
         #client.send(rdata.encode())
         EPwrNoF = float(EPwrNo)

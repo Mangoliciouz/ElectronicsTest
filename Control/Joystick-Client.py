@@ -116,8 +116,8 @@ while done==False:
             value = int(value)
             value = (value * -1) + 100
             value = str(value)
-            textPrint.print(screen, value)
             communicate(value)
+            textPrint.print(screen, value)
         textPrint.unindent()
 
         buttons = joystick.get_numbuttons()
