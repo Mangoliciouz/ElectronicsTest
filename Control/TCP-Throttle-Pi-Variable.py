@@ -28,7 +28,7 @@ print('[*] Started listening ', ip,':',port)
 (client, addr) = server.accept()
 print('[*] Got a connection from ', addr[0],':',addr[1])
 while True:
-    data = client.recv()
+    data = client.recv(64)
     print('[*] Recieved ',data,' From the client')
     print('    Proccessing data')
 
