@@ -34,10 +34,10 @@ while True:
 
     data = data.decode()
     if 'Engine-' in data:
-        EPwrNo = filter(type(data).isdigit, data)
+        EPwrNo = data[7:]
         #rdata = 'Turning Engine to ', filter(type(data).isdigit, data) ,'%'
         #client.send(rdata.encode())
-        EPwrNoF = float(EPwrNo[0])
+        EPwrNoF = float(EPwrNo)
         LPwr.ChangeDutyCycle(EPwrNoF)
         RPwr.ChangeDutyCycle(EPwrNoF)
         print('    Turning Engine to ', EPwrNo ,'%')
