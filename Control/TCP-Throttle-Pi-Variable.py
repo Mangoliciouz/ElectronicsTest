@@ -35,7 +35,7 @@ while True:
     data = data.decode()
     if 'Engine-' in data:
         EPwrNo = filter(type(data).isdigit, data)
-        #rdata = 'Turning Engine to ', filter(type(data).isdigit, data) ,'%'
+        rdata = 'Turning Engine to ', filter(type(data).isdigit, data) ,'%'
         client.send(rdata.encode())
         LPwr.ChangeDutyCycle(EPwrNo)
         RPwr.ChangeDutyCycle(EPwrNo)
