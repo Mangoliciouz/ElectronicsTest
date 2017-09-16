@@ -10,8 +10,6 @@ client.connect(address)
 TreverseState = 0
 
 def communicate(data):
-    Edata = 'Engine-' + data
-    Edata = Edata.ljust(64)
     client.send(Edata.encode())
     #reply = client.recv(1024)
     #print(reply.decode())
@@ -106,6 +104,8 @@ while done==False:
     value = int(value)
     value = (value * -1) + 100
     value = str(value)
+    Edata = 'Engine-' + value
+    Edata = Edata.ljust(64)
     communicate(value)
     Evalue = "Engine Power: " + value
     textPrint.print(screen, Evalue)
@@ -114,6 +114,7 @@ while done==False:
     if TreverseButton != TreverseState:
         TreverseState = TreverseButton
         TreverseMsg = "Reverse-Toggle"
+        TreverseMsg = TreverseMsg.ljust(64)
         communicate(TreverseMsg)
 
 
@@ -133,7 +134,7 @@ while done==False:
     pygame.display.flip()
 
     # Limit to 20 frames per second
-    clock.tick(20)
+    clock.tick(1)
 
 # Close the window and quit.
 # If you forget this line, the program will 'hang'

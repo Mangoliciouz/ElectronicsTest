@@ -46,6 +46,7 @@ while True:
         RPwr.ChangeDutyCycle(EPwrNoF)
         print('    Turning Engine to ', EPwrNo ,'%')
     elif 'Reverse-Toggle' in data:
+        print '[*] Recieved Reverse Throttle Toggle command.'
         if MotorDirState == 'LOW':
             GPIO.output(MotorDir,GPIO.HIGH)
             MotorDirState = 'HIGH'
