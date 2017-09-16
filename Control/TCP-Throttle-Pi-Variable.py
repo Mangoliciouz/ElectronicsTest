@@ -13,6 +13,8 @@ GPIO.setup(MotorDir,GPIO.OUT)
 GPIO.setup(LMotorPwr,GPIO.OUT)
 GPIO.setup(RMotorPwr,GPIO.OUT)
 
+MotorDirState = "LOW"
+
 LPwr = GPIO.PWM(LMotorPwr,100)
 RPwr = GPIO.PWM(RMotorPwr,100)
 
@@ -43,6 +45,15 @@ while True:
         LPwr.ChangeDutyCycle(EPwrNoF)
         RPwr.ChangeDutyCycle(EPwrNoF)
         print('    Turning Engine to ', EPwrNo ,'%')
+    elif 'Reverse-Toggle' in data
+        if MotorDirState == 'LOW'
+            GPIO.output(MotorDir,GPIO.HIGH)
+            MotorDirState = 'HIGH'
+        else
+            GPIO.output(MotorDir,GPIO.LOW)
+            MotorDirState = 'LOW'
+
+
     elif data == 'Disconnect':
         rdata = 'Goodbye'
         client.send(rdata.encode())

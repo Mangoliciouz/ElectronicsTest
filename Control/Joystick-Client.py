@@ -7,6 +7,8 @@ port = 10013
 address = (ip, port)
 client.connect(address)
 
+TreverseState = 0
+
 def communicate(data):
     Edata = 'Engine-' + data
     Edata = Edata.ljust(64)
@@ -48,7 +50,7 @@ class TextPrint:
 pygame.init()
 
 # Set the width and height of the screen [width,height]
-size = [500, 700]
+size = [200, 100]
 screen = pygame.display.set_mode(size)
 
 pygame.display.set_caption("Aircraft Controls")
@@ -105,7 +107,18 @@ while done==False:
     value = (value * -1) + 100
     value = str(value)
     communicate(value)
-    textPrint.print(screen, value)
+    Evalue = "Engine Power: " + value
+    textPrint.print(screen, Evalue)
+    TreverseButton = joystick.get_button (0)
+    textPrint.print(screen, str(TreverseState))
+    if TreverseButton != TreverseState:
+        TreverseState = TreverseButton
+        TreverseMsg = "Reverse-Toggle"
+        communicate(TreverseMsg)
+
+
+
+
         #textPrint.unindent()
 
 
