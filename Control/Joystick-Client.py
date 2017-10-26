@@ -31,7 +31,7 @@ class TextPrint:
         self.font = pygame.font.Font(None, 20)
 
     def print(self, screen, textString):
-        textBitmap = self.font.render(textString, True, FONTGREEN)
+        textBitmap = self.font.render(textString, True, WHITE)
         screen.blit(textBitmap, [self.x, self.y])
         self.y += self.line_height
 
